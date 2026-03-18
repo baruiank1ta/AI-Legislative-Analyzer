@@ -323,42 +323,9 @@ streamlit run main.py
 3. Deploy automatically
 4. Share public link
 
-### Other Platforms
-- Heroku
-- Railway
-- AWS
-- Google Cloud
-- Azure
 
 ---
 
-## 🆘 Troubleshooting
-
-### Error: "OPENROUTER_API_KEY not found"
-```bash
-# Solution: Create .env file with your API key
-echo OPENROUTER_API_KEY=your_key > .env
-```
-
-### Error: "API Error"
-```bash
-# Check:
-1. API key is correct
-2. Internet connection is stable
-3. OpenRouter service is online (status.openrouter.ai)
-```
-
-### Analysis is slow
-- This is normal for large documents
-- Try with a smaller document first
-- Check your internet connection
-
-### File upload fails
-- Check file size (max 50 MB)
-- Ensure file format is supported (PDF, DOCX, TXT)
-- Try converting problematic PDFs to text
-
----
 
 ## 📚 Example Use Cases
 
@@ -399,17 +366,7 @@ By using this app, you'll understand:
 
 ---
 
-## 🤝 Contributing
 
-Contributions are welcome! Areas for improvement:
-- [ ] Add more analysis types
-- [ ] Improve compression algorithm
-- [ ] Add multi-language support
-- [ ] Create bill comparison feature
-- [ ] Add bill tracking/notifications
-- [ ] Build mobile app version
-
----
 
 ## 📝 Future Enhancements
 
@@ -431,42 +388,7 @@ Contributions are welcome! Areas for improvement:
 - Social sharing features
 - Legislative history tracking
 
----
 
-## 📞 Support & Feedback
-
-- 📖 Check README for common issues
-- 🐛 Report bugs on GitHub Issues
-- 💡 Suggest features on GitHub Discussions
-- 📧 Contact for other inquiries
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see LICENSE file for details.
-
----
-
-## 👤 Author
-
-**Your Name**  
-Student Project - 2026
-
-### Project Details
-- **Course**: [Your Course Name]
-- **Institution**: [Your Institution]
-- **Submission Date**: [Date]
-- **GitHub**: https://github.com/baruiankita/AI-Legislative-Analyzer
-
----
-
-## 🙏 Acknowledgments
-
-- **OpenRouter** - Free AI API with 29+ models
-- **Streamlit** - Amazing web framework
-- **Claude** - Provided technical guidance
-- **Indian Parliament** - Legislative data source
 
 ---
 
