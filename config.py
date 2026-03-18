@@ -6,13 +6,24 @@ import streamlit as st
 # ============================================
 
 def get_api_key():
+    """Get API key from Streamlit secrets (Cloud) or environment (Local)"""
+    # Try Streamlit Cloud first
     try:
-        return st.secrets["OPENROUTER_API_KEY"]  # Streamlit Cloud
+        api_key = st.secrets.get("OPENROUTER_API_KEY")
+        if api_key:
+            return api_key
     except:
-        return os.getenv("OPENROUTER_API_KEY")  # Local
+        pass
+    
+    # Try environment variable (local development)
+    api_key = os.getenv("OPENROUTER_API_KEY")
+    if api_key:
+        return api_key
+    
+    # Not found
+    return None
 
 OPENROUTER_API_KEY = get_api_key()
-
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 MODEL = "openrouter/free"
 MAX_TOKENS = 1500
@@ -48,7 +59,8 @@ ANALYSIS_TYPES = {
 }
 
 # ============================================
-# VALIDATION
+# VALIDATION - Show error only when needed
 # ============================================
+# Don't raise error here - handle in main.py instead
 if not OPENROUTER_API_KEY:
-    raise ValueError("❌ OPENROUTER_API_KEY not found!")
+    pass  # Will be handled in main.py
