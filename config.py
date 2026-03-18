@@ -1,28 +1,35 @@
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
+import streamlit as st
 
 # ============================================
-# OPENROUTER API CONFIGURATION (100% FREE!)
+# OPENROUTER API CONFIGURATION (WORKS EVERYWHERE)
 # ============================================
-OPENROUTER_API_KEY = os.getenv('OPENROUTER_API_KEY')
+
+def get_api_key():
+    """
+    Get API key from Streamlit secrets (for deployment)
+    OR fallback to .env (for local)
+    """
+    try:
+        # Streamlit Cloud
+        return st.secrets["OPENROUTER_API_KEY"]
+    except:
+        # Local development
+        return os.getenv("OPENROUTER_API_KEY")
+
+OPENROUTER_API_KEY = get_api_key()
+
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
-# Best model for legal documents - COMPLETELY FREE!
+# Best FREE model
 MODEL = "openrouter/free"
-
-# Alternative free models you can use:
-# - "meta-llama/llama-2-7b-chat:free" - Good alternative
-# - "gryphe/mythomist-7b:free" - Another option
-# All are completely FREE with no rate limits!
 
 MAX_TOKENS = 1500
 
 # ============================================
 # TOKEN COMPRESSION SETTINGS
 # ============================================
-COMPRESSION_RATIO = 0.3  # Keep 30% of tokens
+COMPRESSION_RATIO = 0.3
 MIN_CHUNK_SIZE = 500
 MAX_CHUNK_SIZE = 2000
 
@@ -59,5 +66,9 @@ COMPRESSION_MIN_TOKENS = 5000
 # VALIDATION
 # ============================================
 if not OPENROUTER_API_KEY:
-    print("⚠️ WARNING: OPENROUTER_API_KEY not found in .env file!")
-    print("Get your free API key from: https://openrouter.ai")
+    raise ValueError(
+        "❌ OPENROUTER_API_KEY not found!\n"
+        "👉 For Streamlit Cloud: Add it in Secrets\n"
+        "👉 For Local: Add it in .env file\n"
+        "Get your free key from: https://openrouter.ai"
+    )
