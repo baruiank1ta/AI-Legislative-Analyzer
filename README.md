@@ -312,17 +312,16 @@ export OPENROUTER_API_KEY=your_key
 
 ## 🚀 Deployment
 
-### Local Deployment
+### 🌐 Live Demo  
+🔗 **Try the App:**  
+👉https://ai-legislative-analyzer-5wihuw7hum7f3g6ub45t8q.streamlit.app
+
+
+### 💻 Run Locally  
+
 ```bash
-streamlit run main.py
+  streamlit run main.py
 ```
-
-### Streamlit Cloud (Free)
-1. Push code to GitHub
-2. Connect to Streamlit Cloud
-3. Deploy automatically
-4. Share public link
-
 
 ---
 
