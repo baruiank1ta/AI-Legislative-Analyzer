@@ -131,7 +131,7 @@ The app will open at `http://localhost:8501`
 ## 📖 Usage Guide
 
 ### Step 1: Upload Document
-- Click "Upload & Analyze" tab
+- Click "Upload & Analyze"  tab
 - Select your legal document (PDF, DOCX, or TXT)
 - View document statistics
 
