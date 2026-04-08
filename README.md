@@ -37,6 +37,7 @@ This app combines:
 - **TXT** - Plain text files
 - Handles documents up to 100k+ tokens
 
+
 ### 🤖 Smart Analysis Types
 1. **Summary** - Simplified explanation in simple language
 2. **Key Changes** - What's new in the legislation
